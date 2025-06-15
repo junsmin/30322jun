@@ -156,7 +156,7 @@
 
   <!-- 시작 화면 -->
   <section id="start-screen">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Flag_of_South_Korea.svg/1024px-Flag_of_South_Korea.svg.png" alt="태극기" />
+    <img src="태극기.jpg" alt="태극기" />
     <h1>대구 역사와 독립운동가 이야기</h1>
     <div class="btn-container">
       <button onclick="scrollToSection('main')">🏠 도입부</button>
