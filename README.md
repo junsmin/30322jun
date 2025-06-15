@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+9<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -64,8 +64,7 @@
   </div>
 
   <audio autoplay loop controls>
-    <source src="애국가.mp3" type="audio/mpeg">
-    브라우저가 오디오 태그를 지원하지 않습니다.
+    <source src="애국가.mp3" type="audio/mpeg"
   </audio>
 </body>
 </html>
