@@ -1,101 +1,182 @@
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>대구 역사와 독립운동가 이야기</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Roboto:wght@400;700&display=swap');
+
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
 
     body {
-      font-family: 'Noto Sans KR', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f6f8;
-      line-height: 1.6;
+      font-family: 'Nanum Gothic', 'Roboto', sans-serif;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Flag_of_South_Korea.svg/2560px-Flag_of_South_Korea.svg.png') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #2c3e50;
+      user-select: none;
+    }
+
+    header {
+      background: rgba(41, 128, 185, 0.9);
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav {
-      background-color: #003366;
-      padding: 10px 20px;
+      max-width: 900px;
+      width: 100%;
       display: flex;
       justify-content: center;
       gap: 30px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
     }
 
     nav a {
-      color: white;
-      font-weight: bold;
+      color: #e1f5fe;
       text-decoration: none;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 10px 15px;
+      border-radius: 10px;
+      background: rgba(255 255 255 / 0.2);
+      box-shadow: 0 0 10px rgba(255 255 255 / 0.3);
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    nav a:hover {
-      color: #ffcc00;
+    nav a:hover,
+    nav a:focus {
+      background-color: #ffffffcc;
+      color: #2980b9;
+      box-shadow: 0 0 15px #ffffff;
+      outline: none;
     }
 
     main {
       max-width: 900px;
-      margin: 60px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 40px auto 60px;
+      background: rgba(255 255 255 / 0.9);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
       text-align: center;
+      user-select: text;
     }
 
-    h1 {
+    main h1 {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
       color: #1a5276;
-      margin-bottom: 30px;
+      text-shadow: 0 2px 6px rgba(41, 128, 185, 0.8);
+      letter-spacing: 0.05em;
     }
 
-    .location {
-      background: #eaf2f8;
-      padding: 15px;
-      margin-top: 40px;
-      border-radius: 8px;
-      font-size: 1rem;
-      text-align: left;
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
     }
 
-    .location strong {
-      color: #154360;
+    .btn-group a {
+      background-color: #2980b9;
+      color: #fff;
+      padding: 16px 28px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(41, 128, 185, 0.6);
+      text-decoration: none;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    .btn-group a:hover,
+    .btn-group a:focus {
+      background-color: #1a3f61;
+      box-shadow: 0 8px 20px #1a3f61cc;
+      outline: none;
     }
 
     footer {
-      background: #f0f0f0;
-      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto 30px;
+      padding: 20px 30px;
+      background: rgba(41, 128, 185, 0.9);
+      border-radius: 15px;
+      color: #e1f5fe;
       text-align: center;
-      font-size: 0.95rem;
-      color: #444;
-      margin-top: 40px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      user-select: text;
+    }
+
+    footer .locations {
+      margin-bottom: 15px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    footer .locations span {
+      display: block;
+      margin: 6px 0;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        gap: 15px;
+        padding: 0 10px;
+      }
+      .btn-group {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .btn-group a {
+        width: 100%;
+        box-sizing: border-box;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- 상단 메뉴 -->
-  <nav>
-    <a href="choi.html">1. 최제우 선생과 동학</a>
-    <a href="jang.html">2. 장진홍 선생 소개 및 활동</a>
-    <a href="game.html">3. 일본경찰과 독립운동가</a>
-  </nav>
+  <header>
+    <nav>
+      <a href="choi.html" tabindex="1">1. 최제우 선생과 동학</a>
+      <a href="jang.html" tabindex="2">2. 장진홍 선생 소개 및 활동</a>
+      <a href="game.html" tabindex="3">3. 일본 경찰과 독립운동가</a>
+    </nav>
+  </header>
 
   <main>
     <h1>대구 역사와 독립운동가 이야기</h1>
-    
-    <div class="location">
-      <p><strong>1위치:</strong> 대구광역시 중구 달구벌대로 2077 &lt;현대백화점&gt;</p>
-      <p><strong>2위치:</strong> 대구광역시 중구 포정동 71-6번지 1층 &lt;장진홍 흉상&gt;</p>
-      <p><strong>3위치:</strong> 대구광역시 중구 달구벌대로 2077 &lt;현대백화점 – 게임 장소&gt;</p>
+    <div class="btn-group">
+      <a href="choi.html" tabindex="4">최제우 선생과 동학 자세히 보기</a>
+      <a href="jang.html" tabindex="5">장진홍 선생 소개 및 활동 보기</a>
+      <a href="game.html" tabindex="6">일본 경찰과 독립운동가 게임하기</a>
     </div>
+    <p>
+      이 웹사이트는 대구의 역사적 인물과 독립운동가들을 소개하며, 활동형 체험 게임으로 역사를 재미있게 배울 수 있습니다.
+    </p>
   </main>
 
   <footer>
-    제작: 30322 최민준
+    <div class="locations">
+      <span>1 위치: 대구광역시 중구 달구벌대로 2077 &lt;현대백화점&gt;</span>
+      <span>2 위치: 대구광역시 중구 포정동 71-6번지 1층 &lt;장진홍 흉상&gt;</span>
+      <span>3 위치: 대구 현대백화점</span>
+    </div>
+    <div>제작: 30322 최민준</div>
   </footer>
 
 </body>
