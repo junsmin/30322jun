@@ -4,23 +4,136 @@
   <meta charset="UTF-8" />
   <title>일본 경찰과 독립운동가 게임</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Roboto:wght@400;700&display=swap');
+
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Noto Sans KR', sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #e8f5e9;
+      font-family: 'Nanum Gothic', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: #f0f4f8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      letter-spacing: 0.05em;
+      user-select: none;
     }
+
     h1 {
-      color: #2e7d32;
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+      margin-bottom: 40px;
       text-align: center;
+      letter-spacing: 0.1em;
+      color: #ffcb05;
+      animation: glow 2.5s ease-in-out infinite alternate;
     }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px #ffcb05, 0 0 10px #ffcb05, 0 0 20px #ffd94a, 0 0 30px #ffcb05;
+      }
+      100% {
+        text-shadow: 0 0 10px #ffdb4d, 0 0 20px #ffd94a, 0 0 30px #ffcb05, 0 0 40px #ffcb05;
+      }
+    }
+
     section {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      padding: 30px 40px;
+      max-width: 700px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 32px rgba(255, 203, 5, 0.6);
+      border-color: #ffcb05;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: #e9ebf0;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #ffd94a;
+      text-shadow: 0 0 6px #ffcb05;
+      border-bottom: 2px solid #ffcb05;
+      padding-bottom: 8px;
+      letter-spacing: 0.07em;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      color: #fffde7;
+      text-shadow: 0 0 3px rgba(0,0,0,0.5);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    ul li::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      color: #ffd94a;
+      font-weight: 900;
+      text-shadow: 0 0 4px #ffcb05;
+      transform: scale(1.3);
+      top: 2px;
+    }
+
+    /* Scroll bar hidden for better UI */
+    ::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      section {
+        padding: 20px 25px;
+        margin-bottom: 30px;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p, ul li {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
