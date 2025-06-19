@@ -2,34 +2,147 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>장진홍 선생 소개</title>
+  <title>장진홍 선생과 조선은행</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Roboto:wght@400;700&display=swap');
+
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Noto Sans KR', sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fdf6ec;
-      line-height: 1.7;
-      color: #2c3e50;
+      font-family: 'Nanum Gothic', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #4a148c 0%, #6a1b9a 100%);
+      color: #f3e5f5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      letter-spacing: 0.05em;
+      user-select: none;
     }
+
     h1 {
-      color: #c0392b;
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+      margin-bottom: 40px;
       text-align: center;
-      margin-bottom: 30px;
+      letter-spacing: 0.1em;
+      color: #e1bee7;
+      animation: glow 2.5s ease-in-out infinite alternate;
     }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px #e1bee7, 0 0 10px #ce93d8, 0 0 20px #ba68c8, 0 0 30px #e1bee7;
+      }
+      100% {
+        text-shadow: 0 0 10px #ce93d8, 0 0 20px #ba68c8, 0 0 30px #e1bee7, 0 0 40px #ce93d8;
+      }
+    }
+
     section {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      padding: 30px 40px;
+      max-width: 700px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    section:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 32px rgba(225, 190, 231, 0.6);
+      border-color: #e1bee7;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: #f3e5f5;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+      white-space: pre-line;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #ce93d8;
+      text-shadow: 0 0 6px #e1bee7;
+      border-bottom: 2px solid #e1bee7;
+      padding-bottom: 8px;
+      letter-spacing: 0.07em;
+    }
+
     img {
       max-width: 100%;
-      margin-top: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      margin-top: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      user-select: none;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      color: #f3e5f5;
+      text-shadow: 0 0 3px rgba(0,0,0,0.5);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    ul li::before {
+      content: "◆";
+      position: absolute;
+      left: 0;
+      color: #ce93d8;
+      font-weight: 900;
+      text-shadow: 0 0 4px #e1bee7;
+      transform: scale(1.3);
+      top: 2px;
+    }
+
+    /* Scroll bar hidden */
+    ::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      section {
+        padding: 20px 25px;
+        margin-bottom: 30px;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      p, ul li {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -38,34 +151,31 @@
 
   <section>
     <p>
-      장진홍(일명 성욱, 聖旭)은 경상북도 칠곡 출신입니다. 1912년에 조선보병대에 입대하여 상등병으로 근무했으며, 1914년에 제대한 뒤에는 비밀 항일결사인 광복단에 가입하였습니다. 1918년에는 이국필과 함께 하바로프스크로 가서 그곳의 교포 청년들을 규합하고 군사 훈련을 실시하였습니다. 1919년 귀국 후 3·1운동 당시 각지를 순회하면서 일제가 우리 민족에게 자행한 학살과 고문, 만행에 대한 자료를 수집하고 정리하는 데 힘썼습니다.
+      장진홍 선생은 일명 성욱(聖旭)으로 경상북도 칠곡 출신입니다. 1912년 조선보병대에 입대하여 상등병으로 복무하다가 1914년 제대 후 비밀 항일 결사 광복단에 가입했습니다. 1918년에는 이국필과 함께 하바로프스크로 가 교포 청년들을 규합해 군사훈련을 진행했고, 1919년 귀국 후 3·1 운동 당시 각지로 순회하며 일제가 저지른 학살과 고문 등의 자료를 수집했습니다.
     </p>
     <p>
-      당시 장진홍 선생은 그 진상을 세계에 알리기 위해 1919년 7월 인천에 입항한 미국 군함의 하사 김상철에게 그 자료를 번역해 각국에 배포하도록 부탁하는 등 국제사회에 일본의 만행을 폭로하려고 노력하였습니다. 이후 부산에서 조선일보 지국을 경영하면서 정세를 관망하다가 1925년 중국 북경에서 국내 활동을 위해 무기를 휴대하고 잠입한 이정기와 접촉해 비밀 결사를 조직하였습니다.
+      그는 이 자료를 세계에 알리기 위해 미국 군함 하사 김상철에게 번역을 부탁해 각국에 배포하도록 했습니다. 이후 부산에서 조선일보 지국을 운영하며 정세를 관망하던 중, 1925년 중국 북경에서 국내 활동을 목적으로 무기를 휴대한 이정기와 접촉해 비밀결사를 조직했습니다.
     </p>
     <img src="장진홍흉상.jpg" alt="장진홍 선생 흉상" />
   </section>
 
   <section>
-    <h2>🔥 의거와 활동</h2>
+    <h2>🔥 의거 및 활동</h2>
     <p>
-      1927년, 장진홍 선생은 일제 고관 암살과 중요 시설 파괴를 목적으로 폭탄을 제조하여 거사를 계획하였습니다. 거사의 목표는 경상북도지사, 경상북도 경찰부, 조선은행 대구지점, 식산은행 대구지점 등 네 곳으로 정해졌습니다. 같은 해 10월 18일 대구 덕흥여관에 투숙하여 4개의 폭탄을 나무 상자에 담아 포장한 뒤 여관 종업원 박노선에게 배달을 맡겼습니다.
+      1927년 장진홍 선생은 일제 고관 암살과 중요 시설 파괴를 목표로 폭탄을 제조하였고, 대구에서 거사를 준비했습니다. 목표는 경상북도지사, 경상북도 경찰부, 조선은행 지점, 식산은행 지점 네 곳이었습니다. 10월 18일 대구 덕흥여관에 투숙해 4개의 폭탄을 나무 상자에 포장해 여관 종업원 박노선에게 전달하도록 했습니다.
     </p>
     <p>
-      박노선은 먼저 조선은행 대구지점에 상자를 전달했으나, 상자에서 나는 화약 냄새를 의심한 은행원이 도화선을 차단하여 거사가 실패로 끝났습니다. 그러나 길가에 놓여 있던 나머지 3개의 폭탄은 차례로 폭발하여 일본 경찰 수명에게 중상을 입히고 은행 건물 유리창을 파괴하는 성과를 거두었습니다. 대구에서 기대한 성과를 이루지 못한 장진홍 선생은 1928년 안동과 영천에서 다시 거사를 준비했지만 뜻을 이루지 못했습니다.
-    </p>
-    <p>
-      일본 경찰의 경계망을 피해 일본으로 건너가 오사카에 있는 동생 장의환 집에 은신하였고, 1929년에는 함께 활동하던 이정기가 다시 북경에서 잠입하다 체포되면서 은신처가 드러나 결국 체포되었습니다. 1930년 대구지방법원에서 사형을 선고받고 대구복심법원에 상고했으나 사형이 확정되자, 재판장에서 앉아 있던 의자를 들어 내리치는 강렬한 저항을 보였습니다.
+      조선은행 대구지점에 전달된 폭탄은 은행원의 의심으로 도화선이 차단되어 거사는 실패했으나, 길가에 놓인 다른 폭탄들이 차례로 폭발해 일본 경찰에게 중상을 입히고 은행 건물 유리창이 파괴되는 피해를 입혔습니다. 이후 안동과 영천에서 재차 거사를 도모했으나 실패하였고, 일본으로 건너가 은신했습니다.
     </p>
   </section>
 
   <section>
-    <h2>🕊 순국과 기념</h2>
+    <h2>🕊 순국과 유산</h2>
     <p>
-      1930년 장진홍 선생은 서대문형무소에 수감되어 사형이 확정된 후 자결로 생을 마감했다고 전해집니다. 장진홍 선생의 행동은 단순한 폭력이 아닌, 조국의 독립과 자유를 향한 절박한 외침이었으며, 그 숭고한 희생은 후대에 깊은 감동과 영감을 주고 있습니다.
+      1929년 활동 동지 이정기의 체포로 인해 은신처가 발각되어 장진홍 선생도 체포되었습니다. 1930년 대구지방법원에서 사형이 선고되었고, 상고심에서도 사형이 확정되자 재판장에 앉아 있던 의자를 들어 내리쳤다고 전해집니다. 결국 서대문형무소에 수감된 후 자결한 것으로 알려졌습니다.
     </p>
     <p>
-      대구 중구에는 장진홍 선생의 용기와 뜻을 기리기 위해 그의 흉상과 기념비가 세워져 있으며, 많은 이들이 그의 독립운동 정신을 기억하고 있습니다. 그의 삶과 행동은 일제강점기 민족 독립운동사의 중요한 부분으로 남아 있으며, 후손들에게 자유와 독립의 소중함을 일깨워 주고 있습니다.
+      현재 대구 중구에는 장진홍 흉상과 기념비가 세워져 그의 숭고한 뜻과 독립 의지를 후대에 전하고 있습니다. 그의 투쟁은 단순한 폭력 행위가 아니라 자유와 독립을 향한 절박한 외침이었으며, 오늘날까지 큰 영감을 주고 있습니다.
     </p>
   </section>
 </body>
