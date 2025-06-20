@@ -4,136 +4,64 @@
   <meta charset="UTF-8" />
   <title>일본 경찰과 독립운동가 게임</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Roboto:wght@400;700&display=swap');
-
-    /* Reset & base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
     body {
-      font-family: 'Nanum Gothic', 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-      color: #f0f4f8;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-      letter-spacing: 0.05em;
-      user-select: none;
+      font-family: 'Nanum Gothic', sans-serif;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #e8f5e9;
+      color: #2e7d32;
     }
 
     h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.7);
-      margin-bottom: 40px;
       text-align: center;
-      letter-spacing: 0.1em;
-      color: #ffcb05;
-      animation: glow 2.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes glow {
-      0% {
-        text-shadow: 0 0 5px #ffcb05, 0 0 10px #ffcb05, 0 0 20px #ffd94a, 0 0 30px #ffcb05;
-      }
-      100% {
-        text-shadow: 0 0 10px #ffdb4d, 0 0 20px #ffd94a, 0 0 30px #ffcb05, 0 0 40px #ffcb05;
-      }
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      color: #1b5e20;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
     }
 
     section {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-      padding: 30px 40px;
-      max-width: 700px;
-      margin-bottom: 40px;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    section:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 32px rgba(255, 203, 5, 0.6);
-      border-color: #ffcb05;
-    }
-
-    p {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      color: #e9ebf0;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: #ffd94a;
-      text-shadow: 0 0 6px #ffcb05;
-      border-bottom: 2px solid #ffcb05;
-      padding-bottom: 8px;
-      letter-spacing: 0.07em;
+      background-color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 35px;
+      line-height: 1.8;
     }
 
     ul {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 20px;
+      padding-left: 20px;
     }
 
-    ul li {
-      position: relative;
-      padding-left: 30px;
-      margin-bottom: 12px;
-      font-size: 1.1rem;
-      color: #fffde7;
-      text-shadow: 0 0 3px rgba(0,0,0,0.5);
-      font-weight: 600;
-      letter-spacing: 0.02em;
+    li {
+      margin-bottom: 10px;
     }
 
-    ul li::before {
-      content: "▶";
-      position: absolute;
-      left: 0;
-      color: #ffd94a;
-      font-weight: 900;
-      text-shadow: 0 0 4px #ffcb05;
-      transform: scale(1.3);
-      top: 2px;
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
     }
 
-    /* Scroll bar hidden for better UI */
-    ::-webkit-scrollbar {
-      width: 0;
-      background: transparent;
+    .image-box {
+      flex: 1 1 40%;
+      text-align: center;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      body {
-        padding: 20px 10px;
-      }
-      section {
-        padding: 20px 25px;
-        margin-bottom: 30px;
-      }
-      h1 {
-        font-size: 2.5rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-      p, ul li {
-        font-size: 1rem;
-      }
+    .image-box img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .image-caption {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #333;
     }
   </style>
 </head>
@@ -143,25 +71,36 @@
   <section>
     <p>
       4명이 한 조가 되어 참여하는 체험형 게임입니다. 먼저 가위바위보를 통해 두 명은 일본 경찰,
-      두 명은 독립운동가 역할을 맡습니다. 게임은 술래잡기 방식으로 진행되며, 경찰은 독립운동가를 쫓아 얼음을 만듭니다.
-      잡힌 독립운동가는 움직일 수 없고, 다른 동료의 ‘땡!’ 터치로만 다시 움직일 수 있습니다.
-      이 게임은 참여자들이 협동심과 전략을 발휘하여 서로 도우며, 역사 속 독립운동가들의 용기와 희생을 직접 체험할 수 있게 설계되었습니다.
-      게임을 통해 일제 강점기의 상황을 간접적으로 경험하며, 민족의 자유와 독립의 중요성을 깊게 느낄 수 있습니다.
+      두 명은 독립운동가 역할을 맡습니다. 게임은 술래잡기 방식으로 진행되며, 경찰은 독립운동가를 쫓아 '얼음' 상태로 만듭니다.
+      잡힌 독립운동가는 정지 상태가 되며, 다른 독립운동가가 터치하여 ‘땡!’을 외쳐야만 다시 움직일 수 있습니다.
+    </p>
+    <p>
+      게임이 끝난 뒤에는 모든 참가자가 함께 “대한독립만세!”를 외치며, 그 시대를 살아낸 독립운동가들의 희생정신을 기리는 시간을 갖습니다.
     </p>
   </section>
 
   <section>
-    <h2>🎮 규칙 요약</h2>
+    <h2>🎮 게임 규칙 요약</h2>
     <ul>
-      <li>경찰은 도망가는 독립운동가를 쫓아가 태그하면 "얼음" 상태로 만듭니다.</li>
-      <li>얼음이 된 사람은 다른 독립운동가가 터치해줄 때까지 정지 상태로 있어야 합니다.</li>
-      <li>제한 시간 내 모든 독립운동가가 잡히면 경찰 승리, 살아남으면 독립운동가 승리!</li>
+      <li>가위바위보로 일본 경찰 2명, 독립운동가 2명을 정합니다.</li>
+      <li>일본 경찰은 독립운동가를 따라가 태그하면 "얼음" 상태로 만듭니다.</li>
+      <li>얼음이 된 사람은 다른 독립운동가가 터치할 때까지 움직일 수 없습니다.</li>
+      <li>제한 시간 내 모든 독립운동가가 잡히면 경찰 승리, 살아남으면 독립운동가 승리입니다.</li>
     </ul>
-    <p>
-      게임 종료 후에는 모두 함께 “대한독립만세!”를 외치며 태극기를 높이 들어 독립운동가들의
-      희생을 기리는 시간을 가집니다. 이를 통해 참여자 모두가 한 마음으로 역사적 의미를 되새기며,
-      단결과 희생정신을 배우는 뜻깊은 시간이 될 것입니다.
-    </p>
   </section>
-</body>
-</html>
+
+  <section>
+    <h2>📸 일제강점기 실제 장면</h2>
+    <p>
+      아래의 사진들은 단순한 게임이 아닌, 그 시대의 역사적 사실을 바탕으로 만들어졌음을 보여줍니다.
+      왼쪽은 일제강점기 일본 경찰의 실제 사진이며, 오른쪽은 조국을 위해 싸운 독립운동가들의 실제 인물들입니다.
+    </p>
+
+    <div class="image-row">
+      <div class="image-box">
+        <img src="일본경찰.jpg" alt="일본 경찰 실제 사진">
+        <div class="image-caption">⬅ 일제강점기 일본 경찰의 실제 모습</div>
+      </div>
+      <div class="image-box">
+        <img src="독립운동가.jpg" alt="독립운동가 실제 사진">
+        <div class="image
