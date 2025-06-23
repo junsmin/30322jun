@@ -5,7 +5,6 @@
   <title>대구 역사와 독립운동가 이야기</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo:wght@700&display=swap');
-
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -199,23 +198,23 @@
 </head>
 <body>
 
-  <!-- 🎬 오프닝 애니메이션 -->
+  <!-- 오프닝 애니메이션 -->
   <div id="opening">
     <div class="opening-text">대구 독립운동가와 동학</div>
   </div>
 
-  <!-- 🎵 오프닝 효과음 (한 번 재생) -->
+  <!-- 오프닝 효과음 -->
   <audio id="openingSound" src="국악 효과음 #542.mp3"></audio>
 
-  <!-- 🎵 애국가 (초기 정지 상태, 오프닝 후 자동 재생) -->
+  <!-- 애국가 BGM -->
   <audio id="bgm" src="애국가.mp3" loop></audio>
   <button id="bgm-toggle" onclick="toggleBGM()">음악 켜기</button>
 
   <header>
     <nav>
-      <a href="choi.html" tabindex="1">1. 최제우 선생과 동학</a>
-      <a href="jang.html" tabindex="2">2. 장진홍 선생 소개 및 활동</a>
-      <a href="game.html" tabindex="3">3. 일본 경찰과 독립운동가</a>
+      <a href="choi.html">1. 최제우 선생과 동학</a>
+      <a href="jang.html">2. 장진홍 선생 소개 및 활동</a>
+      <a href="game.html">3. 일본 경찰과 독립운동가</a>
     </nav>
   </header>
 
@@ -224,9 +223,9 @@
     <div class="subtitle">그날의 외침을 기억하며, 역사의 현장을 따라가 봅니다.</div>
 
     <div class="btn-group">
-      <a href="choi.html" tabindex="4">최제우 선생과 동학 자세히 보기</a>
-      <a href="jang.html" tabindex="5">장진홍 선생 소개 및 활동 보기</a>
-      <a href="game.html" tabindex="6">일본 경찰과 독립운동가 게임하기</a>
+      <a href="choi.html">최제우 선생과 동학 자세히 보기</a>
+      <a href="jang.html">장진홍 선생 소개 및 활동 보기</a>
+      <a href="game.html">일본 경찰과 독립운동가 게임하기</a>
     </div>
 
     <p class="quote">
@@ -251,14 +250,13 @@
 
     bgm.volume = 0.6;
 
-    // 오프닝 효과음 재생 후 2.5초 뒤에 애국가 자동 재생
-    window.addEventListener('DOMContentLoaded', () => {
-      openingSound.play();
+    window.onload = () => {
+      openingSound.play().catch(e => console.log('오프닝 효과음 실패:', e));
       setTimeout(() => {
-        bgm.play();
+        bgm.play().catch(e => console.log('배경음악 재생 실패:', e));
         toggleBtn.textContent = '음악 끄기';
-      }, 2500); // 오프닝 종료와 동시에 애국가 재생
-    });
+      }, 2500); // 오프닝 끝나고 애국가 자동 재생
+    };
 
     function toggleBGM() {
       if (bgm.paused) {
@@ -270,6 +268,5 @@
       }
     }
   </script>
-
 </body>
 </html>
