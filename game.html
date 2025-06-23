@@ -1,76 +1,179 @@
+<!-- game.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>일본 경찰과 독립운동가 게임</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
     body {
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'Do Hyeon', sans-serif;
       max-width: 900px;
       margin: 40px auto;
-      padding: 20px;
-      background: #e8f5e9;
-      color: #2c3e50;
+      padding: 30px 35px;
+      background: linear-gradient(135deg, #d0f0c0 0%, #6dbf69 100%);
+      color: #1b5e20;
+      border-radius: 20px;
+      box-shadow: 0 12px 35px rgba(27, 94, 32, 0.35);
     }
     h1 {
       text-align: center;
+      font-size: 3rem;
       color: #1b5e20;
-      font-size: 2.2em;
-      margin-bottom: 20px;
+      margin-bottom: 35px;
+      text-shadow: 2px 2px 8px #4caf50aa;
+      font-weight: 700;
     }
     section {
-      background-color: #ffffff;
-      padding: 25px;
+      background-color: #ffffffcc;
+      padding: 25px 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(27, 94, 32, 0.25);
+      margin-bottom: 40px;
+      line-height: 1.7;
+      font-size: 1.15rem;
+      color: #1b5e20;
+    }
+    #game-description p {
+      margin-bottom: 18px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #2e7d32;
+      text-align: center;
+    }
+    #game-description img {
+      max-width: 45%;
+      margin: 15px 2.5%;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(27, 94, 32, 0.3);
+      display: inline-block;
+      vertical-align: middle;
     }
-    img {
-      max-width: 100%;
-      display: block;
-      margin: 15px auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    #game-instructions {
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.3rem;
+      color: #27632a;
+      text-shadow: 0 0 3px #1b5e20;
     }
-    h2 {
-      color: #388e3c;
-      border-left: 6px solid #66bb6a;
-      padding-left: 10px;
+    #result {
       margin-top: 20px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+      min-height: 40px;
+      color: #2e7d32;
+      text-shadow: 0 0 4px #1b5e20;
     }
-    ul {
-      padding-left: 20px;
+    .choices {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 15px;
     }
-    li {
-      margin-bottom: 10px;
+    .choice-btn {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 18px 30px;
+      border-radius: 14px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(46, 125, 50, 0.7);
+      transition: background-color 0.3s, transform 0.15s;
+      user-select: none;
+    }
+    .choice-btn:hover {
+      background-color: #1b5e20;
+      transform: scale(1.1);
+    }
+    .nav-buttons {
+      text-align: center;
+      margin-top: 45px;
+    }
+    .nav-buttons button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      margin: 10px 16px;
+      border-radius: 12px;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(46, 125, 50, 0.7);
+      transition: background-color 0.4s ease, transform 0.2s ease;
+    }
+    .nav-buttons button:hover {
+      background-color: #1b5e20;
+      transform: scale(1.08);
     }
   </style>
 </head>
 <body>
   <h1>일본 경찰과 독립운동가 게임</h1>
 
-  <section>
+  <section id="game-description">
     <p>
-      4명이 한 조가 되어 참여하는 체험형 게임입니다. 먼저 가위바위보를 통해 두 명은 일본 경찰,
-      두 명은 독립운동가 역할을 맡습니다. 게임은 술래잡기 방식으로 진행되며, 경찰은 독립운동가를 쫓아 얼음을 만듭니다.
+      4명이 한 조가 되어 참여하는 체험형 게임입니다. 먼저 가위바위보를 통해 두 명은 일본 경찰,  
+      두 명은 독립운동가 역할을 맡습니다. 게임은 술래잡기 방식으로 진행되며, 경찰은 독립운동가를 쫓아 얼음을 만듭니다.  
       잡힌 독립운동가는 움직일 수 없고, 다른 동료의 ‘땡!’ 터치로만 다시 움직일 수 있습니다.
     </p>
-
-    <img src="일본경찰.jpg" alt="일본 경찰">
-    <img src="독립운동가.jpg" alt="독립운동가">
+    <img src="일본경찰.jpg" alt="일본 경찰" />
+    <img src="독립운동가.jpg" alt="독립운동가" />
   </section>
 
   <section>
-    <h2>🎮 규칙 요약</h2>
-    <ul>
-      <li>경찰은 도망가는 독립운동가를 쫓아가 태그하면 "얼음" 상태로 만듭니다.</li>
-      <li>얼음이 된 사람은 다른 독립운동가가 터치해줄 때까지 정지 상태로 있어야 합니다.</li>
-      <li>제한 시간 내 모든 독립운동가가 잡히면 경찰 승리, 살아남으면 독립운동가 승리!</li>
-    </ul>
-    <p>
-      게임 종료 후에는 모두 함께 “대한독립만세!”를 외치며 태극기를 높이 들어 독립운동가들의
-      희생을 기리는 시간을 가집니다.
-    </p>
+    <div id="game-instructions">
+      가위바위보로 일본 경찰과 대결하세요!<br>
+      경찰을 이기면 독립운동가가 잡히지 않습니다.<br>
+      경찰이 이기면 독립운동가가 잡혀 얼음 상태가 됩니다! 도전해보세요!
+    </div>
+    <div class="choices">
+      <button class="choice-btn" data-choice="가위">✌ 가위</button>
+      <button class="choice-btn" data-choice="바위">✊ 바위</button>
+      <button class="choice-btn" data-choice="보">🖐 보</button>
+    </div>
+    <div id="result"></div>
   </section>
+
+  <div class="nav-buttons">
+    <button onclick="location.href='choi.html'">최제우 선생과 동학</button>
+    <button onclick="location.href='jang.html'">장진홍 선생 소개</button>
+    <button onclick="location.href='game.html'">다시하기</button>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.choice-btn');
+    const resultDiv = document.getElementById('result');
+
+    function judge(user, police) {
+      if (user === police) return '무승부입니다! 다시 도전하세요.';
+      if (
+        (user === '가위' && police === '보') ||
+        (user === '바위' && police === '가위') ||
+        (user === '보' && police === '바위')
+      ) return '승리! 독립운동가가 잡히지 않았습니다!';
+      else return '패배... 독립운동가가 경찰에게 잡혀 얼음 상태가 됩니다!';
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const userChoice = button.getAttribute('data-choice');
+        const options = ['가위', '바위', '보'];
+        const policeChoice = options[Math.floor(Math.random() * options.length)];
+
+        const outcome = judge(userChoice, policeChoice);
+
+        resultDiv.innerHTML = `
+          당신: <strong>${userChoice}</strong> <br>
+          경찰: <strong>${policeChoice}</strong> <br><br>
+          ${outcome}
+        `;
+      });
+    });
+  </script>
 </body>
 </html>
